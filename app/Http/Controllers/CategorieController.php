@@ -8,6 +8,7 @@ use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use LDAP\Result;
+use Mockery\Undefined;
 
 class CategorieController extends Controller
 {
@@ -144,11 +145,15 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categorie)
+    public function destroy($idCategorie)
     {
         try {
             // Eliminar Categoria
-            $result = $categorie->delete();
+            $result  = 0;
+            $categorie = Categorie::where("id", $idCategorie)->get();
+           if(isset($categorie[0])){
+               $result = $categorie[0]->delete();
+           }
             // Respuesta
             return response()->json([
                 "message" => $result ? "Categoria Eliminada correctamente" : "No se Eliminó la Categoria!",
