@@ -15,10 +15,14 @@ class MarkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($quantityElements = 10)
     {
-        $marks = Mark::where('status',1)->OrderBy('id', 'desc')->get();
-        return response()->json($marks, Response::HTTP_OK);
+        $marks = Mark::where('status',1)->OrderBy('id', 'desc')->simplePaginate($quantityElements);
+        return response()->json([
+            "message" => count($marks) ? "Consulta Exitosa" : "No hay Datos",
+            "data"=> $marks, 
+            "estatus" => Response::HTTP_OK
+        ], Response::HTTP_OK);
     }
 
     /**
