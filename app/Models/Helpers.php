@@ -13,12 +13,14 @@ class Helpers extends Model
 
     public static function getMensajeError($e, $mensaje)
     {
-        $errorInfo = $mensaje . " ("
-            . $e->getMessage() . ")."
-            . "Código de error: " . $e->getCode()
-            . "Linea de error: " . $e->getLine()
-            . "El archivo: " . $e->getFile()
-            ?? 'No hay mensaje de error';
+        $errorInfo =[
+            "message" => $mensaje,
+            "messageError" => $e->getMessage(),
+            "lineError" => $e->getLine(),
+            "codeError" => $e->getCode(),
+            "fileError" => $e->getFile(),
+        ];
+
         return $errorInfo;
     }
 
