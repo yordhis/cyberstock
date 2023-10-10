@@ -11,6 +11,17 @@ class Helpers extends Model
 {
     use HasFactory;
 
+    public static function getMensajeError($e, $mensaje)
+    {
+        $errorInfo = $mensaje . " ("
+            . $e->getMessage() . ")."
+            . "Código de error: " . $e->getCode()
+            . "Linea de error: " . $e->getLine()
+            . "El archivo: " . $e->getFile()
+            ?? 'No hay mensaje de error';
+        return $errorInfo;
+    }
+
     public static function setNameElementId($datos, $campos, $tables){
         foreach ($datos as $key => $dato) {
             foreach ($tables as $table) {

@@ -45,15 +45,19 @@ class MarkController extends Controller
     {
         try {
             // Crear categoria
-            Mark::create([
-                "name" => $request[0]
+            $marks = Mark::create([
+                "name" => $request->name
             ]);
             // Respuesta
-            return response()->json("Marca creada correctamente", Response::HTTP_OK);
+            return response()->json([
+                "message" => $marks ? "Marca creada correctamente" : "No se creo la marca!",
+                "data"=> $marks, 
+                "estatus" => Response::HTTP_CREATED
+            ], Response::HTTP_CREATED);
     
         } catch (\Throwable $th) {
             //throw $th;
-            return response()->json($th->getMessage(), Response::HTTP_OK);
+            return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
         }
     }
 
@@ -63,9 +67,21 @@ class MarkController extends Controller
      * @param  \App\Models\Mark  $mark
      * @return \Illuminate\Http\Response
      */
-    public function show(Mark $mark)
+    public function show($idMark)
     {
-        //
+        try {
+            $result = Mark::where("id", $idMark)->get();
+            // Respuesta
+            return response()->json([
+                "message" => count($result) ? "Consulta Exitosa" : "No Hay resultados",
+                "data"=> $result, 
+                "estatus" => Response::HTTP_OK
+            ], Response::HTTP_OK);
+    
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**
@@ -86,9 +102,24 @@ class MarkController extends Controller
      * @param  \App\Models\Mark  $mark
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMarkRequest $request, Mark $mark)
+    public function update(Request $request, Mark $mark)
     {
-        //
+        try {
+            // Actualizar marca
+            $result = $mark->update([
+                "name" => $request->name
+            ]);
+            // Respuesta
+            return response()->json([
+                "message" => $result ? "Marca Editada correctamente" : "No se edito la marca!",
+                "data"=> $result, 
+                "estatus" => Response::HTTP_OK
+            ], Response::HTTP_OK);
+    
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**
@@ -99,6 +130,19 @@ class MarkController extends Controller
      */
     public function destroy(Mark $mark)
     {
-        //
+        try {
+            // Eliminar marca
+            $result = $mark->delete();
+            // Respuesta
+            return response()->json([
+                "message" => $result ? "Marca Eliminada correctamente" : "No se Eliminó la marca!",
+                "data"=> $result, 
+                "estatus" => Response::HTTP_OK
+            ], Response::HTTP_OK);
+    
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 }
