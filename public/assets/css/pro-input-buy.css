@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+.group-inline {
+    display: inline-block;
+    height: 3rem;
+    width: 423px;
+    /* background-color: #CCE437; */
+    padding: 0%;
+    margin: 0%;
+}
+.form-control {
+    float: inline-end;
+    background-color: #f1f1f1;
+    height: 3rem;
+    width: 23rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: left;
+    padding-left: 35px;
+    color: #717b75;
+}
+
+.icon_pro_new {
+    color: #00ff28;
+    font-size: 30px;
+    background-color: #022b11;
+    width: 55px;
+    height: 3rem;
+    padding-top: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    margin-right: 0%;
+}
+
+.navber .menu_superior .slide .info_process-buy {
+    position: absolute;
+    left: 300px;
+    margin-top: 50px;
+    width: clamp(500px, 70vw, 1300px);
+
+    /*     background-color: blue; */
+}
+/********************************input code , month , data***********************************************/
+
+.info_process-buy .input_process {
+    position: absolute;
+    display: grid;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.info_process-buy .icon_pro {
+    font-size: 35px;
+    padding: 5px 10px;
+
+    background-color: #022b11;
+    color: #00ff28;
+    border-radius: 10px 0 0 10px;
+}
+.info_process-buy .icon_pro input {
+    position: absolute;
+    outline: none;
+    top: 0.1px;
+    margin-left: 10px;
+    border: none;
+    height: 45px;
+    font-size: 16px;
+    padding-left: 15%;
+
+    width: 330px;
+    border-radius: 0 10px 10px 0;
+}
+
+.info_process-buy .code_input {
+    left: 53%;
+}
+.info_process-buy .code_input input::placeholder {
+    position: absolute;
+
+    color: red;
+
+    padding: 5px 40px;
+    font-size: 35px;
+}
+.info_process-buy .code_input input {
+    padding-left: 35px;
+}
+
+/************************************************************/
+
+.info_process-buy .tex-input {
+    top: 13%;
+}
+.info_process-buy .tex-input input {
+    padding-left: 8px;
+    top: 0;
+}
+
+.info_process-buy .tex-input input::placeholder {
+    position: absolute;
+
+    top: 16px;
+}
+
+.info_process-buy .tex-input svg {
+    position: relative;
+    top: 25px;
+    left: 25%;
+}
+
+/********************botones del los********************************/
+.tex-input .concept_btn {
+    position: relative;
+    display: flex;
+    padding: 0px;
+    top: 5%;
+
+    left: 90px;
+    cursor: pointer;
+}
+
+.tex-input .concept_btn .concept {
+    margin: 0 5px;
+    border: 1px solid #022b11;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+.info_process-buy .tex-input .concept:hover {
+    border: 1px solid #00ff28;
+    color: black;
+
+    transition: 200ms ease;
+}
+
+/***************************month*******************************************/
+
+.info_process-buy .month_input {
+    left: 53%;
+    top: 13%;
+}
+
+.info_process-buy .month_input input::placeholder {
+    position: absolute;
+    padding: 8px 0;
+    color: red;
+    left: 20%;
+    font-size: 28px;
+}
+
+.info_process-buy .month_input p {
+    position: relative;
+    left: 55px;
+    margin-top: 5px;
+    font-weight: 500;
+    color: #022b11;
+}
+
+/**********************tabla de input*********************************************************/
+.container_table {
+    position: absolute;
+    border: none;
+    top: 35%;
+    /*  background-color: red; */
+    border-radius: 0px;
+    width: 66vw;
+    height: 148px;
+    left: 0;
+    overflow: auto;
+}
+
+.container_table .table-process {
+    position: relative;
+    border-collapse: collapse;
+}
+
+.table-process th {
+    position: sticky;
+    background-color: #022b11;
+    color: #fff;
+    padding: 5px 4px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* .table-process th:nth-child(1){
+   border-radius: 10px 0 0;
+
+
+} */
+.table-process th:nth-child(5) {
+    /* border-radius: 0 10px 0 0; */
+    width: 10vw;
+}
+
+.table-process th:nth-child(2) {
+    width: 30vw;
+}
+
+/* .table-process tr:nth-child(2) td:nth-child(1){
+   border-radius: 0 0 0 10px;
+} */
+
+/* .table-process  td:nth-child(5){
+
+    text-align: center;
+
+} */
+
+.table-process td:nth-child(2) {
+    text-align: center;
+}
+/* .table-process tr:nth-child(2) td:nth-child(5){
+   border-radius: 0 0 10px 0 ;
+} */
+
+.table-process td {
+    font-size: 14px;
+    padding: 4px 4px;
+    border-right: 2px solid #bad5c4;
+    background-color: #fff;
+    border-top: 2px solid #bad5c4;
+}
+/****************************input de la table ************************************************/
+.table-process .product_code {
+    outline: none;
+    border: none;
+    font-size: 15px;
+    width: 100px;
+    margin-left: 15px;
+    text-align: center;
+}
+.table-process .amount {
+    outline: none;
+    border: none;
+    width: 90px;
+    font-size: 15px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+/***********************************botom  de "more" de la table*********************************************/
+
+.info_process-buy .butom_more::before {
+    position: absolute;
+    top: 40%;
+    margin-left: 64%;
+    content: "+";
+    text-align: center;
+    color: #00ff28;
+    width: 30px;
+    height: 30px;
+    background-color: #022b11;
+    font-size: 23px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.info_process-buy .butom_more:hover::before {
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    padding: 0.5px 0.5px;
+
+    transition: 500ms;
+}
+
+/*******************************tabla sub total************************************************/
+/* .info_process-buy .table-sub_total {
+    border-collapse: collapse;
+    top: 70%;
+    left: 44%;
+
+    position: absolute;
+    width: 400px;
+} */
+/* .table-sub_total th {
+    background: white;
+    position: absolute;
+    width: 250px;
+    font-weight: 600;
+    border-right: 1px solid #022b11;
+    border-top: 1px solid #022b11;
+    border-left: 1px solid #022b11;
+    padding: 0 20px;
+    display: flex;
+} */
+
+/* .table-sub_total td {
+    background: white;
+    border-top: 1px solid #022b11;
+    border-right: 1px solid #022b11;
+    display: block;
+    text-align: center;
+    margin-left: 250px;
+} */
+
+/* .table-sub_total tr:nth-child(1) th {
+    border-radius: 10px 0 0 0;
+}
+
+.table-sub_total tr:nth-child(5) th {
+    border-radius: 0 0 0 10px;
+}
+.table-sub_total tr:nth-child(1) td {
+    border-radius: 0 10px 0 0;
+}
+
+.table-sub_total tr:nth-child(5) td {
+    border-radius: 0 0 10px 0;
+} */
+
+/**********************************butom-sales************************/
+.info_process-buy .butom_sales {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 99%;
+}
+
+.info_process-buy .butom-processoutput {
+    font-weight: 500;
+    background: #37e47d;
+    margin: 0 2.5vw;
+    width: 207px;
+    padding: 8px 8px;
+    display: flex;
+    font-size: 19px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.info_process-buy .butom-processoutput .icon_sales {
+    position: relative;
+    font-size: 25px;
+}
+
+.info_process-buy .Calcelar_butom {
+    background: #e43737;
+}
+
+.info_process-buy .dejar_butom {
+    background-color: #cce437;
+}
+
+/*******************derechos*****************************/
+
+.info_process-buy .derecho {
+    position: relative;
+    top: max(600px, 106%);
+}
+
+/**********************************************************************************************************************/
+
+/******************************position table input-processor ************************************************
+
+.info_input-processor .container_table{
+
+/*    background-color: red;
+   top: 52%;
+    height: 190px;
+}
+/************************************position dinput-processor **************************************************
+.info_input-processor  .id_input{
+
+  top: 15%;
+
+}
+
+.info_input-processor  .id_input input{
+   padding-left:33px ;
+}
+.info_input-processor .tex-input{
+   top :30%;
+
+}
+.info_input-processor .tex-input input{
+   top: -0.5px;
+}
+************/

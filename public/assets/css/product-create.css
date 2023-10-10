@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+#btn_ventas {
+    display: none;
+}
+
+.container_process-sale {
+    border: 2px solid #022b11;
+    border-radius: 10px;
+    position: absolute;
+    left: 8%;
+    top: 0;
+    width: 580px;
+    height: 520px;
+    background: #d9d9d9;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 800ms ease;
+    transform: translate3d(205px, -15px, 0px);
+}
+#btn_ventas:checked ~ .container_process-sale {
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s ease;
+    transform: translate3d(-15px, -15px, 100px);
+}
+
+.container_process-sale h1 {
+    background: #022b11;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.container_process-sale .cerrar_caja::after {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    content: "X";
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid #0c6a31;
+    border-radius: 50%;
+}
+
+.container_process-sale .cerrar_caja:hover::after {
+    border: 1px solid #1dd366;
+    color: #1dd366;
+}
+
+.container_process-sale .caja_1 {
+    position: relative;
+    padding: 0 5px;
+    display: block;
+}
+.container_process-sale .caja_1 .inpt-caja {
+    border-radius: 10px;
+
+    border: 1px solid #022b11;
+    display: flex;
+    margin: 20px;
+
+    width: max(345px, 28vw);
+    height: 40px;
+    overflow: hidden;
+}
+.container_process-sale .caja_1 input {
+    outline: none;
+    border: none;
+    padding-left: 10px;
+
+    width: 300px;
+}
+.container_process-sale .caja_1 input::placeholder {
+    position: absolute;
+    font-size: 19px;
+
+    color: #022b11;
+
+    margin-top: 8px;
+}
+.container_process-sale .caja_1 .in-code::placeholder {
+    color: red;
+    padding-left: 0;
+}
+
+.container_process-sale .caja_1 p {
+    font-size: 23px;
+    display: inline-block;
+    background-color: #022b11;
+    color: #d9d9d9;
+    width: 120px;
+    text-align: center;
+
+    font-weight: 500;
+}
+
+/*******************************************************************************************/
+
+.container_process-sale .inpt-caja p {
+    padding: 0 8px;
+}
+
+.container_process-sale .inpt-caja:nth-child(5) p {
+    padding: 0 50px;
+}
+
+.container_process-sale .inpt-caja:nth-child(6) p {
+    padding: 0 28px;
+}
+
+.container_process-sale .caja_1 .icon_caja {
+    font-size: 30px;
+    background-color: #022b11;
+    color: #1dd366;
+    width: 70px;
+    padding: 4px 0;
+    text-align: center;
+    border-radius: 8px 0 0 8px;
+}
+
+/**********************************************tipos de pagos**************************************************/
+
+.container_process-sale .caja_1 .tex {
+    background-color: #d9d9d9;
+    padding: 8px 0;
+    width: 235px;
+}
+.container_process-sale .caja_1 .tex select {
+    position: absolute;
+
+    border-radius: 2px 2px 5px 5px;
+    z-index: 3;
+    font-size: 18px;
+    text-align: center;
+
+    outline: none;
+    overflow: auto;
+
+    margin: 0 10px;
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+    background: #d9d9d9;
+    background-image: none;
+    flex: 1;
+    text-align: center;
+
+    color: #022b11;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.container_process-sale .caja_1 .tex2 select {
+    z-index: 2;
+}
+
+.container_process-sale .caja_1 .tex select::-ms-expand {
+    display: none;
+}
+
+.container_process-sale .caja_1 select option {
+    padding: 2px 7px;
+    background-color: rgb(250, 250, 250);
+    border-left: 0.5px solid #022b11;
+    border-right: 0.5px solid #022b11;
+}
+
+.container_process-sale .caja_1 select option:hover {
+    background-color: rgba(31, 118, 63, 0.3);
+}
+.container_process-sale .caja_1 select option:nth-child(4) {
+    border-radius: 0 0 8px 8px;
+}
+.container_process-sale .caja_1 select option:nth-child(1) {
+    font-size: 16px;
+}
+
+/*********************************************************************************************************/
+.container_process-sale .caja_1 .option {
+    position: absolute;
+    /* background-color: red; */
+    width: 190px;
+    font-size: 12.5px;
+    left: 67%;
+    top: 90%;
+    font-weight: 500;
+}
+
+/*************************botom caja****************************/
+
+.container_process-sale .butom_caja {
+    position: absolute;
+    font-size: 25px;
+
+    bottom: 20px;
+}
+
+.butom_caja .buton_venta {
+    background: #e43737;
+    margin: 15px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.butom_caja .buton_venta .icon_ventas {
+    position: relative;
+    font-size: 15px;
+    padding: 30px 0;
+}
+
+.container_process-sale .butom_caja .btn-pago {
+    background-color: #37e47d;
+    margin-left: 150px;
+}
+
+/********************************botom cja more*******************************************************/
+.container_process-sale .caja_more-1 {
+    position: absolute;
+    top: 38%;
+    left: max(380px, 31vw);
+}
+
+.container_process-sale .caja_more-2 {
+    position: absolute;
+    left: max(380px, 31vw);
+    top: 49.5%;
+}
+
+/*************************************************************************************************************************************************
+ 										
+															successful
+ 
+ ************************************************************************************************************************************************/
+#btn_successful {
+    display: none;
+}
+#btn_successful2 {
+    display: none;
+}
+
+.container_process-sale .carga-mark {
+    position: absolute;
+    border: 2px solid #022b11;
+    border-radius: 20px;
+    left: max(230px, 18.8vw);
+    top: 6%;
+
+    width: 330px;
+    height: 140px;
+    background: #1e1e1e;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0px, 20px, 0px);
+}
+
+.container_process-sale .carga-mark2 {
+    position: absolute;
+    border: 2px solid #022b11;
+    border-radius: 20px;
+    left: max(230px, 18.8vw);
+    top: 18%;
+    z-index: 4;
+    width: 330px;
+    height: 140px;
+    background: #1e1e1e;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0px, 20px, 0px);
+}
+#btn_successful:checked ~ .container_process-sale .carga-mark {
+    transition: all 0.2s;
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate3d(0px, 0px, 100px);
+}
+
+#btn_successful2:checked ~ .container_process-sale .carga-mark2 {
+    transition: all 0.2s;
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate3d(0px, 0px, 100px);
+}
+
+/***************************************mark************************************************************/
+.carga-mark .mark {
+    margin-top: 5%;
+
+    color: #d9d9d9;
+    font-weight: 500;
+}
+.carga-mark .input-mark {
+    position: relative;
+    border: none;
+    outline: none;
+    margin-top: 4%;
+    padding-left: 15px;
+    height: 35px;
+    width: 80%;
+
+    border-radius: 10px;
+}
+
+.carga-mark .input-mark::placeholder {
+    font-size: 18px;
+    padding-left: 45px;
+}
+
+.carga-mark .btn-mark {
+    position: relative;
+    z-index: 2;
+    display: block;
+    color: #e43737;
+    font-size: 18px;
+    margin-top: 3%;
+}
+
+.carga-mark::before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 88%;
+    left: 47%;
+    background-color: #1e1e1e;
+    transform: rotate(45deg);
+}
+
+/************mark2****************/
+.carga-mark2 .mark {
+    margin-top: 5%;
+
+    color: #d9d9d9;
+    font-weight: 500;
+}
+.carga-mark2 .input-mark {
+    position: relative;
+    border: none;
+    outline: none;
+    margin-top: 4%;
+    padding-left: 15px;
+    height: 35px;
+    width: 80%;
+
+    border-radius: 10px;
+}
+
+.carga-mark2 .input-mark::placeholder {
+    font-size: 18px;
+    padding-left: 45px;
+}
+
+.carga-mark2 .btn-mark {
+    position: relative;
+    z-index: 2;
+    display: block;
+    color: #e43737;
+    font-size: 18px;
+    margin-top: 3%;
+}
+
+.carga-mark2::before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 88%;
+    left: 47%;
+    background-color: #1e1e1e;
+    transform: rotate(45deg);
+}
+
+/*************************************************************************************************************************************************
+ 															TICKET					
+ 
+ ************************************************************************************************************************************************/
+
+#C1 {
+    display: none;
+}
+
+.approved-mark {
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    top: -12%;
+    color: #d9d9d9;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    background: #1e1e1e;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#C1:checked ~ .approved-mark {
+    animation-delay: 1s;
+    animation: caption 1.5s forwards;
+}
+
+@keyframes caption {
+    0% {
+        left: 70%;
+        opacity: 0;
+        visibility: hidden;
+    }
+    20% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    75% {
+        left: 65%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        left: 70%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.approved-mark .mark-like {
+    color: #1dd366;
+    font-size: 22px;
+    margin: 4px;
+    font-weight: 800;
+}
+.approved-mark h3 {
+    font-weight: 500;
+}
+
+/***************************************************/

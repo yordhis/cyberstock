@@ -1,0 +1,92 @@
+
+
+.customer-registration{
+position: absolute;
+left:max(240px,35vw);
+top:-75px !important;
+width:max(380px,50vw)!important;
+height:max(600px,65vh)!important;
+border-radius: 10px; 
+background-color:#D9D9D9 ;
+font-size: clamp(10px,1.5vw,15px);
+border:2px solid #022B11 ;
+
+}
+
+.customer-registration .register{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    padding: 3px 0;
+    font-size: 2.5em;
+    font-weight: 500;
+    color: white;
+    left: 0 !important;
+    background-color: #022B11;
+    border-radius: 8px 8px 0 0;
+}
+
+.customer-registration .input-registration{
+    position: absolute;
+    left: 0 !important;
+   
+    width: 100%;
+    height: max(200px,35vh);
+    top:4.5em; 
+   
+
+}
+
+.customer-registration .input-client{
+    position: relative;
+    top:0 ;
+    left:6vw;
+
+    margin-bottom: max(3px,3vh);
+    width: fit-content;
+    display: block;
+    background-color:#022B11 ;
+    font-size:max(15px, 1.6vw) ;
+    border-radius: 8px 0 0 8px;
+
+   
+}
+.customer-registration .input-client p{
+    position: absolute;
+    padding: 8px 10px;
+    color: white;
+    
+   
+   
+   
+    
+}
+.customer-registration .input-client input{
+    position:relative ;
+    left: max(3.5em,18vw);
+    width: max(200px,20vw);
+    height: max(30px,3.2vw);
+    font-size:max(13px, 1.5vw) ;
+    outline: none;
+    border: 1px solid #022B11;
+    border-radius: 0 8px 8px 0;
+    padding-left: 20px;
+  
+}
+
+.customer-registration .butom-regist{
+    position: relative;
+    color: #D9D9D9;
+    background: #022B11;
+    border: none;
+    font-size:max(13px, 1.5vw) ;
+    left: max(3em,10vw);
+    border-radius: 8px;
+     width: max(200px,30vw); 
+     height: max(30px,2vw);
+}
+
+.customer-registration .butom-regist:hover{
+    color: #1dd366;
+   
+}

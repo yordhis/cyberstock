@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'abel', sans-serif;
+
+  background-color: rgba(31, 118, 63, 0.31);
+}
+.navber{
+  position:relative ;
+  width: 100vw;
+  height:100vh;
+  
+
+}
+
+.container_1{
+  background-color: #1F763FE0;
+  
+  width: 240px;
+  height:100%;
+}
+/*****************************LOGO CS***************************************************/
+.container_1 img{
+position:relative;
+
+width: 170px;
+left: 22%;
+top: 15px;
+margin-bottom: 8px;
+ 
+
+}
+/********************************menu lateral isquierdo***************************************************/
+.container_1 .navbar1 ul{
+  list-style: none;
+
+
+}
+
+.container_1 .navbar1 ul li{
+ position:relative;
+ 
+
+}
+
+
+/**************************backgraund de inventario**************************************/
+
+.container_1 .navbar1 ul li:nth-child(2) a {
+  color: black;
+   background: #BAD5C4;
+}
+.container_1 .navbar1 ul li:nth-child(2) a i{
+  color: black;
+   background: #BAD5C4;
+}
+/****************************************************************************************/
+
+.container_1 .navbar1 ul li a{
+
+  text-decoration: none;
+  font-size: 20px ;
+  padding: 12px ;
+  color: #FFFFFF;
+  display: block;
+  text-align: justify;
+ padding-left: 80px;
+
+
+}
+
+
+/***********************************iconos************************************/
+
+.container_1 .navbar1 ul li a i{
+  position: absolute;
+ color:#D9D9D9;
+ font-size: 23px;
+ top: 14px;
+ left: 35px;
+}
+
+
+ 
+ /********************************soporte**************************************/ 
+
+.container_1 .navbar1 ul h4{
+  position: absolute;
+
+  color:#D9D9D9;
+  margin: 0 70px ;
+ top: max(600px,90%);
+
+  font-size: 21px;
+}
+
+.container_1 .navbar1 ul h4:hover{
+  color: beige;
+
+
+
+}
+
+.container_1 .navbar1 ul h4 i{
+  font-size: 30px;
+}
+
+
+ /**Menu superior ************************************************/
+.navber .menu_superior{
+  border-bottom: 2px solid #1F763FE0;
+  position: absolute;
+  width: 100vw;
+  height:70px;
+  top: 2px;
+  margin: 0;
+
+  
+  
+} 
+/*****************************animacon**************************************************/
+.navber .menu_superior .slide{
+  z-index: 1;
+  
+  margin-top:29vh;
+  position: absolute; 
+  width: 100%;
+  padding-left: 30px;
+clip-path: circle(0.0% at 0 0);
+
+  
+}
+
+
+.navber .menu_superior .slide.active{
+clip-path: circle(300% at 0 0);
+  transition: 3s;
+  transition-property: clip-path;
+
+}
+/********************************************************************************/
+
+.navber .menu_superior .slide  .info{
+  position: absolute;
+  top: -128px;
+  width:clamp(680px, 2vw, 900px);
+  height: 70vh;
+  padding-left: 275px;
+
+
+}
+/*************************************icono imput******************************************************************/
+
+.navber .menu_superior .slide  .info .icon{
+  position: absolute;
+  display: flex;
+  border-radius:10px 0 0 10px ;
+  width: 50px;
+  height: 34px;
+  padding:5px 24px 0 15px;
+  color: black;
+  background: #022B11;
+  color:#00ff28 ;
+  font-size: 24px;
+  left:clamp( 345px,23vw,500px);
+  top: 50px;
+  
+}
+.navber .menu_superior .slide  .info .icon input{
+  position: absolute;
+  top: 0.2px;
+  left: 45px;
+  width: 300px;
+  height: 34px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #022B11;
+  letter-spacing: 0px;
+  line-height: 22px;
+  padding-left:7px;
+}
+
+.navber .menu_superior .slide  .info_entry .icon input{
+  width: 350px;
+}
+  .navigation{
+
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  top: 39px;
+  padding-left: 1150px;
+  transform: translateX(-50%);
+}
+
+ .navigation .btn {
+
+
+  width: 126px;
+  height: 30px;
+  margin-left: -2.5px;
+  padding:4px 0 0 ;
+  text-align: center;
+  border-right: 2px solid  #1F763FE0;;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.navigation .btn.active{
+  background: #00ff28;
+  border-radius: 4px;
+  border: 2px solid #1F763FE0;
+  
+} 
+
+
+.config{
+  position: absolute;
+  display: grid;
+  font-size: 15px;
+  top: 12px;
+  color: #022B11;
+  padding-left:clamp(1000px,93%,1300px);
+  text-align: center;
+  cursor: pointer;
+}
+.config .fa-gear{
+  font-size: 35px;
+  color: #32824F;
+}
+
+ .config input{
+  display: none;
+}

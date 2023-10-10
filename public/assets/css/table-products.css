@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+.navber .menu_superior .slide .info_process-buy{
+   position: absolute;
+   left: 300px;
+   margin-top: 50px;
+   width: clamp(500px,70vw,1300px);
+  
+   /* background-color: blue;   */
+}
+.info_process-buy .clic{
+    position: relative;
+    display:inline;
+    left: -32%;
+
+}
+
+.container_table{
+   position: absolute;
+   border: none;
+   top: 10%;
+   /* background-color: red;  */
+   /* border-radius: 10px ;    */
+   width: 66vw;
+   height: 50vh;
+    left: 0;
+    overflow: auto;
+}
+
+
+
+
+
+.container_table .table-process{
+   position: relative;
+   border-collapse:collapse;
+}
+
+
+.table-process th{
+   position: sticky; 
+   background-color: #022B11;
+   color: #fff;
+   padding: 5px 7px ;
+   text-align: center;
+   font-weight: normal;
+   font-size: 25px;
+
+}
+
+
+/* .table-process th:nth-child(1){
+   border-radius: 10px 0 0;
+}
+.table-process th:nth-child(6){
+   border-radius: 0 10px 0 0;
+ width: auto;
+}
+
+.table-process th:nth-child(2){
+ width: auto;
+} */
+
+/* .table-process tr:nth-child(4) td:nth-child(1){
+   /* border-radius: 0 0 0 10px; */
+/* } */
+
+/* .table-process tr:nth-child(4) td:nth-child(5){ */
+   /* border-radius: 0 0 10px 0 ; */
+  
+/* } */ 
+
+
+
+ .table-process td {
+    text-align: center;
+
+   font-size: 20px;
+   padding: 4px 4px ;
+   border-right: 2px solid #BAD5C4;
+   background-color: #fff;
+   border-top: 2px solid  #BAD5C4;
+}
+.action{
+   text-decoration:none;
+   color:#021605;
+}
+.table-process td .action{
+    font-size: 18px;
+    margin: 0 2px;
+    padding: 0 30px;
+   
+}
+
+/* .table-process td .action:nth-child(2){
+    border-left: 1px solid #022B11;
+} */
+/****************************input de la table ************************************************/
+.table-process  .product_code{
+   outline: none;
+   border: none;
+   font-size: 15px;
+   width: 100px;
+   margin-left: 15px;
+   text-align: center;
+   
+}
+.table-process .amount{
+   outline: none;
+   border: none;
+   width: 90px;
+   font-size: 15px;
+   padding-left: 10px;
+   text-align: center;
+
+}
+
+/***********************************botom  de "more" de la table*********************************************/
+
+.info_process-buy .butom_more::before{
+position: absolute;
+top: 0;
+left:0%;
+
+content: '+';
+text-align: center;
+color:#00ff28;
+width: 30px;
+height: 30px;
+background-color: #022B11;
+font-size:23px ;
+border-radius: 10px;
+cursor: pointer;
+
+ 
+}
+
+.info_process-buy .butom_more:hover::before{
+  font-size: 24px;
+  width: 30px;
+  height: 30px;
+  padding: auto;
+ 
+  transition: 500ms;
+}
+
+
+
+/*******************derechos*****************************/
+
+.info_process-buy  .derecho{
+   position: relative;
+   top:max(600px,102%);
+   
+}
+
+
+
+/**********************************************************************************************************************/
+
+/******************************position table input-processor ************************************************
+
+.info_input-processor .container_table{
+
+/*    background-color: red;
+   top: 52%;
+    height: 190px;
+}
+/************************************position dinput-processor **************************************************
+.info_input-processor  .id_input{
+
+  top: 15%;
+
+}
+
+.info_input-processor  .id_input input{
+   padding-left:33px ;
+}
+.info_input-processor .tex-input{
+   top :30%;
+
+}
+.info_input-processor .tex-input input{
+   top: -0.5px;
+}
+************/
+
+

@@ -1,0 +1,760 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+#btn_ventas{ display: none; }
+
+
+.container_process-sale{
+	
+	
+	border:2px solid #022B11 ;
+	border-radius: 10px;
+	position: absolute;
+	left: 8%;
+	top:0;
+	width: 580px;
+	height: 480px;
+	background: #D9D9D9;
+	opacity: 0;
+	visibility: hidden;
+		transition: all 800ms ease;
+	transform: translate3d(205px, -15px, 0px);
+
+
+}
+#btn_ventas:checked ~ .container_process-sale{
+	opacity: 1;
+	visibility: visible;
+	transition: all 1s ease;
+
+transform: translate3d(-15px, -15px, 100px);
+}
+
+.container_process-sale h1{
+	background: #022B11;
+	text-align: center;
+	font-size: 40px;
+	border-radius: 8px 8px 0 0;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+
+}
+
+.container_process-sale .cerrar_caja::after{
+	position: absolute;
+	right: 30px;
+	top: 10px;
+	content: 'X';
+	width: 20px;
+	height: 20px;
+	font-size: 15px;
+	text-align: center;
+	border: 1px solid #0c6a31;
+	border-radius: 50%;
+
+}
+
+.container_process-sale .cerrar_caja:hover::after{
+
+	border: 1px solid #1dd366;
+	color: #1dd366;
+}
+
+.container_process-sale .caja_1{
+	position: relative;
+	padding: 0 5px;
+	display: block;
+	
+
+	
+}
+.container_process-sale .caja_1 .inpt-caja{
+	border-radius: 10px;
+
+	border: 1px solid #022B11 ;
+	display: flex;
+	margin: 20px;
+
+	width:  max(345px, 28vw);
+	height: 40px;
+	overflow: hidden;
+
+
+}
+.container_process-sale .caja_1 input{
+	outline: none;
+	border: none;
+	background: #D9D9D9;
+	margin-left: 30px;
+
+
+}
+.container_process-sale .caja_1 input::placeholder{
+	position: absolute;
+font-size: 33px;
+
+color:#022B11 ;
+margin-left: 30px;
+margin-top: 2px;
+	
+}
+.container_process-sale .caja_1 .in-code::placeholder{
+	color: red;
+}
+
+
+.container_process-sale .caja_1 p{
+	font-size: 27px;
+background-color:#022B11 ;
+color: #D9D9D9;
+width: 150px;
+
+text-align: center;
+font-weight: 500;
+
+}
+.container_process-sale .caja_1 .icon_caja{
+	font-size: 30px;
+background-color:#022B11 ;
+color: #D9D9D9;
+width: 70px;
+padding: 4px 0;	
+text-align: center;
+border-radius: 10px 0 0 10px;
+}
+
+/**********************************************tipos de pagos**************************************************/
+
+.container_process-sale .caja_1  .tex{
+	
+background-color:#fff;
+		padding: 8px 0;
+		width: 230px;
+		
+
+}
+.container_process-sale .caja_1  .tex select{
+	position: absolute;
+
+	border-radius: 2px 2px 5px 5px;
+	z-index: 2;
+	font-size: 18px;
+	text-align: center;
+	
+	outline: none;
+	overflow: auto;
+	
+	margin: 0 10px;
+   outline:0;
+   box-shadow:none;
+   border:0;
+   background:white;
+   background-image: none;
+   flex: 1;
+   text-align:center ;
+   
+   color:#022B11;
+   cursor:pointer;
+   font-size: 16px;
+   font-family: 'Open Sans', sans-serif;
+	
+}
+
+.container_process-sale .caja_1  .tex select::-ms-expand {
+	display: none;
+	
+
+ }
+ 
+   
+ .container_process-sale .caja_1 select option{
+	padding: 2px 7px;
+	
+	border-left:0.5px solid #022B11;
+	border-right:0.5px solid #022B11 ;
+	
+ }
+
+
+.container_process-sale .caja_1 select option:hover {
+	
+   background-color:rgba(31, 118, 63, .3);
+   
+}
+.container_process-sale .caja_1 select option:nth-child(4){
+
+	border-radius: 0 0 8px 8px;
+}
+.container_process-sale .caja_1 select option:nth-child(1){
+	font-size: 16px;
+}
+
+
+
+
+
+/*************************botom caja****************************/
+
+.container_process-sale .butom_caja{
+	position: absolute;
+	
+	transform: translateX(70px)translateY(-50px);
+	bottom: 0;
+}
+
+ .butom_caja .buton_venta{
+ 	background: #E43737;
+ 	font-size: 30px;
+ 	margin:0 25px;
+ 	padding: 4px  5px;
+ 	border-radius: 5px;
+	cursor: pointer;
+ }
+
+  .butom_caja .buton_venta .icon_ventas{ 
+  font-size:37 }
+
+
+.container_process-sale .butom_caja .btn-pago{
+  	background-color: #37E47D;
+  }
+
+/********************************botom cja more*******************************************************/
+ .container_process-sale .caja_more{
+ 	position: absolute;
+ 	top: 40%;
+	left:max(380px,31vw);
+ }
+
+
+
+ /*************************************************************************************************************************************************
+ 										
+															successful
+ 
+ ************************************************************************************************************************************************/
+ #btn_successful{
+	display: none;
+ }
+
+ .carga-successful{
+		
+	border:2px solid #022B11 ;
+	border-radius: 10px;
+	position: absolute;
+	left: 8%;
+	top:0;
+	width: 580px;
+	height: 480px;
+	background: #D9D9D9;
+	opacity: 0;
+	visibility: hidden;
+	transform: translate3d(205px, -15px, 0px);
+
+	
+ }
+ 
+ #btn_successful:checked ~  .carga-successful{
+
+	opacity: 1;
+	visibility: visible;
+	
+ transform: translate3d(-15px, -15px, 100px);
+ }
+
+ #btn_successful:checked ~  .carga-successful .successful{
+	opacity: 0;
+
+	visibility: hidden;
+
+	animation:carga-successful 500ms ease forwards;
+	animation-delay: 3.5s;
+
+ }
+
+
+ @keyframes carga-successful{
+
+	0%{	
+		visibility: hidden;
+		opacity: 0;
+	}
+		
+	95%{
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+
+	100%{	
+		visibility: visible;
+		opacity: 1;
+		
+	
+		
+}
+}
+
+ #btn_successful:checked ~ .container_process-sale{
+	visibility: hidden;
+	opacity: 0;
+ }
+
+
+ .carga-successful .hearder-sucessful{
+
+ background: #022B11;
+	text-align: center;
+	font-size: 40px;
+	border-radius: 8px 8px 0 0;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+
+ }
+
+.carga-successful  .hearder-sucessful p{
+
+	position: relative;
+	left: 24%;
+	width: 50%;
+	text-align: center;
+
+
+}
+
+
+ .carga-successful .successful{
+	position: relative;
+	 /* background-color: #E43737;  */
+	top: 7%;
+	left: 16%;
+	width: 68%;
+	height: 65%;
+	opacity: 0;
+	visibility:hidden;
+
+
+
+
+	
+	
+	
+ }
+
+ .successful .cargas{
+	position:relative;
+	font-size: 140px;
+	font-weight: 700;
+	left: 25%;
+	color: #022B11;
+ }
+
+ .successful h2{
+	font-weight: 500;
+	position: relative;
+	top: -20px;
+	text-align: center;
+	padding: 8px 0;
+	border-bottom:2px solid #022B11;
+ }
+
+
+ .successful .buton-sucessful{
+	position: relative;
+	background: #E43737;
+ 	font-size: 20px;
+	top:10% ;
+	padding: 8px 6px;
+	padding-left: 32px;
+ 	border-radius: 5px;
+	cursor: pointer;
+
+ }
+
+ .successful .btn-generar{
+	position: relative;
+	background:  #1dd366;
+	left: 39px;
+
+ }
+
+ .successful .icon-sucessful{
+	position: absolute;
+	font-size:26px ;
+	padding: 0 5px;
+	left: 0;
+
+	
+ }
+
+
+ /**************************************loader********************************************************/
+ #btn_successful:checked ~  .carga-successful  .loader{
+	animation: captionloader 6s ease forwards;
+	animation-delay:500ms;
+
+ }
+ .loader {
+	
+	
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	margin: -90px 0 0 -90px;
+	
+  }
+
+  
+@keyframes captionloader{
+	0%{
+		opacity:1; 
+	}
+	100%{
+	 opacity:0; 
+	}
+}
+ .circle {
+	position: absolute;
+	border: 3px solid transparent;
+	border-top-color: #00af46;
+	border-radius: 50%;
+	animation: rotate linear infinite;
+  }
+  .circle.one {
+	border-top-color: #00a743;
+	height: 60px;
+	width: 60px;
+	left: 50px;
+	top: 60px;
+	animation-duration: 0.85s;
+  }
+  .circle.two {
+	border-top-color: #00ab44;
+	height: 85px;
+	width: 85px;
+	top: 48px;
+	left: 38px;
+	animation-duration: 0.95s;
+  }
+  .circle.three {
+	height: 110px;
+	width: 110px;
+	top: 35px;
+	left: 25px;
+	animation-duration: 1.05s;
+  }
+ 
+  @keyframes rotate {
+	from {
+	  transform: rotateZ(0deg);
+	}
+	to {
+	  transform: rotateZ(360deg);
+	}
+  }
+
+ /*************************************************************************************************************************************************
+ 															TICKET					
+ 
+ ************************************************************************************************************************************************/
+  
+ #C1{
+ 	display: none;
+ }
+
+  .Ticket1{
+		
+	border:2px solid #022B11 ;
+	border-radius: 10px;
+	position: absolute;
+	left: 8%;
+	top:0;
+	width: 580px;
+	height: 480px;
+	background: #D9D9D9;
+	visibility: hidden;
+	opacity: 0;
+
+transform: translate3d(205px, -15px, 0px);
+}
+
+ #btn_successful:checked ~ .Ticket1{
+ 	
+ 	transform: translate3d(-15px, -15px, 100px);
+
+ }
+
+  #temporaryMessage:checked ~  .Ticket1{
+  
+		opacity: 1;
+		visibility: visible;
+
+ 	animation-delay: 2s;
+	animation: caption 2.8s  forwards;
+}
+
+
+  
+@keyframes caption{
+
+	0%{	left: 8%; 
+		width: 580px;
+	height: 480px;
+		
+	}
+
+	65%{ 
+		height: 480px;
+	 }
+
+	100%{ 
+		left: 18%;
+	
+		width: 390px;
+			height: 500px;
+		
+}
+}
+
+#C1:checked ~ .carga-successful{
+	
+
+	opacity: 0;
+	visibility: hidden;
+}
+
+#btn_ventas:checked ~ .Ticket1{
+
+	transform: translate3d(-15px, -15px, 100px);
+
+ }
+
+.Ticket1 .hearder-ticket{
+	background: #022B11;
+	text-align: center;
+	border-radius: 8px 8px 0 0;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+		font-size: 40px;
+
+
+ }
+
+ .Ticket  .hearder-ticket p{
+
+	position: relative;
+	left: 24%;
+	width: 50%;
+	text-align: center;
+
+
+}
+
+#C1:checked ~  .Ticket1 .hearder-ticket p{
+
+		animation: captionTet4 1s ease forwards;
+
+
+
+}
+@keyframes captionTet4{
+
+	100%{	
+		animation-delay: 1s;
+		opacity: 1;
+		font-size: 40px;
+		transform: translate3d(0,0, 100px);
+
+	
+	}
+	0%{	
+		opacity: 0;
+		font-size: 40px;
+		transform: translate3d(0, -20px, 100px);
+		
+}
+}
+
+#C1:checked ~ .carga-successful  .hearder-sucessful p{
+
+		animation: captionText4-1 2s ease forwards;
+
+
+
+}
+@keyframes captionText4-1{
+
+	100%{	
+		animation-delay: 1s;
+		opacity: 1;
+		font-size: 40px;
+		transform: translate3d(0,0px, 100px);
+
+	
+	}
+	0%{	
+		opacity: 0;
+		font-size: 40px;
+		transform: translate3d(0, 10px, 100px);
+		
+}
+}
+
+/***************************************************/
+.Ticket1 .cont-ticket{
+	position: relative;
+	 /* background-color: #E43737;  */
+	color: #143A21;
+	width: 90%;
+	height: 85%;
+	left: 5%;
+	top: 1%;
+	
+
+}
+
+#C1:checked ~ .Ticket1 .cont-ticket{
+	animation: cont-ticket  300ms ease forwards;
+	animation-delay: 3s;
+	opacity: 0;
+	visibility: hidden;
+	
+
+}
+
+@keyframes cont-ticket{
+
+	0%{	
+		visibility: hidden;
+		opacity: 0;
+	}
+		
+	95{
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+
+	100%{	
+		visibility: visible;
+		opacity: 1;
+		
+	
+		
+}
+}
+
+
+
+.cont-ticket .head-empresa {
+	font-size: 0.9em;
+	margin: 0 20px;
+	text-align: center;
+	font-weight: 600;
+	
+	
+}
+
+.cont-ticket .head-empresa .h1 .p{
+	font-weight: 400;
+	margin: 0 60px;
+	font-size: 0.7em;
+}
+.cont-ticket .head-empresa .h1 .p-2{
+	margin: 3px 0;
+	text-align: start;
+	font-weight: 400;
+	font-size: 0.75em;
+}
+
+.cont-ticket .head-empresa .h-1{
+	text-align: start;
+}
+.cont-ticket .head-empresa .h-1 .p-3{
+	font-size: 0.6em;
+
+}
+
+.cont-ticket .head-empresa .table-product{
+	display: block;
+	height: 100px;
+	overflow: auto;
+	border-bottom: 1px solid #143A21;
+	border-top:  1px solid #143A21;
+}
+.cont-ticket .head-empresa .table-product table{
+	
+text-align: justify-all;
+border-collapse:collapse;
+width: 100%; 
+}
+.cont-ticket .head-empresa .table-product table th{
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+    padding: 0px 4px ;
+    text-align: center;
+	font-size: 1.5em;
+	font-weight: 500;
+   
+}
+.cont-ticket .head-empresa .table-product table th:nth-child(1){
+	border-left: none;
+}
+
+.cont-ticket .head-empresa .table-product table td{
+	font-size: 1.2em;
+	font-weight: 500;
+
+padding:7px 0;
+
+}
+
+
+
+.cont-ticket .head-empresa .total-prod{
+	font-size: 1.5em;
+	text-align: start;
+	
+	
+}
+
+.total-prod .total-1{
+	position: absolute;
+	right:20px;
+	
+	
+	
+	
+}
+
+.cont-ticket .head-empresa .butom-tiker{
+	font-size: 1.1em;
+	text-align: start;
+	font-weight: 600;
+	margin: 15px 0;
+
+	
+	
+}
+.cont-ticket .head-empresa .butom-tic{
+	position: absolute;
+	background-color: #E43737;
+	padding: 10px 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	
+}
+.cont-ticket .head-empresa .butom-tic-2{
+	
+
+	right:18px;
+	background-color: #00ab44;
+}
+ .icon-ticket{
+	position: absolute;
+	margin: -3px -25px;
+	font-size: 1.5em;
+}

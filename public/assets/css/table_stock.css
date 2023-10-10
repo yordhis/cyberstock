@@ -1,0 +1,128 @@
+
+
+
+
+.info .outer-wrapper {
+    position: absolute;
+/*     background-color: red;    */
+    top: clamp(100px,2vh,110px);
+    width: 67vw;
+    height: 60vh;
+    margin-left:clamp(10px,10%,800px) ;
+    border-radius: 10px 10px 10px 10px;
+    overflow: auto;
+   
+    
+}
+ .info .outer-wrapper .table-wrapper {
+
+    position: relative;
+    
+    left: 0;
+    
+    border-radius: 0 0 10px 10px;
+  
+    border-radius: 10px 10px 10px 10px;
+
+  
+}
+
+
+.info .outer-wrapper .table-wrapper .table {
+   
+   
+ 
+    border-spacing: 0px;    
+    
+}
+
+
+
+.table th{
+    position: sticky; 
+    top: 0px;
+    background-color: #022B11;
+    color: #fff;
+    padding: 5px 25px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 19px;
+    outline: none;
+ 
+} 
+
+
+
+.table thead th:nth-child(1){
+    border-radius: 10px 0 0 0px;
+}
+
+
+
+.table thead th:nth-child(8){
+    border-radius: 0 10px 0 0px;
+}
+
+
+
+.table td {
+    color: #022B11;
+    text-align:unset;
+    padding: 1px 3px;
+    height: 25px;
+    font-size: 14px;
+    border-left: 2px solid rgb(177, 177, 177);
+    background-color: #fff;
+     border-bottom: 2px solid rgb(177, 177, 177);
+}
+
+.table td:nth-child(1){
+    text-align: center;
+}
+
+.table tr:nth-child(10) td:nth-child(1) {
+    border-radius: 0 0 0 10px;
+}
+
+.table tr:nth-child(10) td:nth-child(8) {
+    border-radius: 0 0 10px 0;
+}
+
+/***************************************tabla de ext****************************************************************************/
+.info2 .table th{
+    font-size: 17px;
+    text-align: center;
+}
+.info2 .table td{
+    font-size: 13.5px;
+
+}
+
+.info2 .table th,  .table td{
+    padding: 5px 8px;
+}
+
+
+
+
+.info2 .table thead th:nth-child(8){
+    
+    border-radius: 0;
+}
+
+
+.info2 .table thead th:nth-child(9){
+  
+    border-radius: 0 10px 0 0px;
+}
+
+
+.info2 .table tr:nth-child(10) td:nth-child(8) {
+    border-radius: 0;
+}
+
+.info2 .table tr:nth-child(10) td:nth-child(9) {
+    border-radius: 0 0 10px 0;
+}
+
+/*******************************************************************************************************/
