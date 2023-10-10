@@ -7,6 +7,7 @@ use App\Models\Categorie;
 // use App\Http\Requests\UpdateCategorieRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use LDAP\Result;
 
 class CategorieController extends Controller
 {
@@ -18,8 +19,12 @@ class CategorieController extends Controller
     public function index()
     {
         // $categories = Categorie::where('status',1)->OrderBy('id', 'desc')->get();
-        $categories = Categorie::where('status',1)->simplePaginate(5);
-        return $categories;
+        $categories = Categorie::where('status',1)->OrderBy('id', 'desc')->simplePaginate(10);
+        return response()->json([
+            "message" => count($categories) ? "Consulta Exitosa" : "No hay Datos",
+            "data"=> $categories, 
+            "estatus" => Response::HTTP_OK
+        ], Response::HTTP_OK);
     }
 
     /** Api get categories */
@@ -48,13 +53,20 @@ class CategorieController extends Controller
     public function store(Request $request)
     {
         try {
-
-            //Crear categoria
-            Categorie::create([
-                "name" => $request[0]
-            ]);
-            // respuesta
-            return response()->json("Categoria Creada correctamente.", Response::HTTP_OK);
+            // Crear Categoria
+            $result = 0;
+            if($request->name !== null){
+                $result = Categorie::create([
+                    "name" => $request->name
+                ]);
+            }
+            
+            // Respuesta
+            return response()->json([
+                "message" => $result ? "Categoria creada correctamente" : "No se creo la Categoria, El campo nombre está vacío!",
+                "data"=> $result, 
+                "estatus" => $result ? Response::HTTP_CREATED : Response::HTTP_NOT_FOUND
+            ], $result ? Response::HTTP_CREATED : Response::HTTP_NOT_FOUND);
 
         } catch (\Throwable $th) {
             return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
@@ -67,9 +79,21 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categorie)
+    public function show($idCategorie)
     {
-        //
+        try {
+            $result = Categorie::where("id", $idCategorie)->get();
+            // Respuesta
+            return response()->json([
+                "message" => count($result) ? "Consulta Exitosa" : "No Hay resultados",
+                "data"=> $result, 
+                "estatus" => Response::HTTP_OK
+            ], Response::HTTP_OK);
+    
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**
@@ -92,7 +116,26 @@ class CategorieController extends Controller
      */
     public function update(Request $request, Categorie $categorie)
     {
-        //
+        try {
+            // Actualizar Categoria
+            $result = 0;
+            if($request->name !== null){
+                $result = $categorie->update([
+                    "name" => $request->name
+                ]);
+            }
+           return $result;
+            // Respuesta
+            return response()->json([
+                "message" => $result ? "Categoria Editada correctamente" : "No se edito la Categoria, El campo nombre es obligatorio!",
+                "data"=> $categorie, 
+                "estatus" => $result ? Response::HTTP_OK : Response::HTTP_NOT_FOUND
+            ], $result ? Response::HTTP_OK : Response::HTTP_NOT_FOUND);
+    
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 
     /**
@@ -103,6 +146,19 @@ class CategorieController extends Controller
      */
     public function destroy(Categorie $categorie)
     {
-        //
+        try {
+            // Eliminar Categoria
+            $result = $categorie->delete();
+            // Respuesta
+            return response()->json([
+                "message" => $result ? "Categoria Eliminada correctamente" : "No se Eliminó la Categoria!",
+                "data"=> $categorie, 
+                "estatus" => Response::HTTP_OK
+            ], Response::HTTP_OK);
+    
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json($th->getMessage(), Response::HTTP_NOT_FOUND);
+        }
     }
 }

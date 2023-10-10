@@ -15,9 +15,9 @@ class MarkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($quantityElements = 10)
+    public function index()
     {
-        $marks = Mark::where('status',1)->OrderBy('id', 'desc')->simplePaginate($quantityElements);
+        $marks = Mark::where('status',1)->OrderBy('id', 'desc')->simplePaginate(10);
         return response()->json([
             "message" => count($marks) ? "Consulta Exitosa" : "No hay Datos",
             "data"=> $marks, 
@@ -44,16 +44,20 @@ class MarkController extends Controller
     public function store(Request $request)
     {
         try {
-            // Crear categoria
-            $marks = Mark::create([
-                "name" => $request->name
-            ]);
+            // Crear Marca
+            $result = 0;
+            if($request->name !== null){
+                $result = Mark::create([
+                    "name" => $request->name
+                ]);
+            }
+            
             // Respuesta
             return response()->json([
-                "message" => $marks ? "Marca creada correctamente" : "No se creo la marca!",
-                "data"=> $marks, 
-                "estatus" => Response::HTTP_CREATED
-            ], Response::HTTP_CREATED);
+                "message" => $result ? "Marca creada correctamente" : "No se creo la marca, El campo nombre está vacío!",
+                "data"=> $result, 
+                "estatus" => $result ? Response::HTTP_CREATED : Response::HTTP_NOT_FOUND
+            ], $result ? Response::HTTP_CREATED : Response::HTTP_NOT_FOUND);
     
         } catch (\Throwable $th) {
             //throw $th;
@@ -106,15 +110,19 @@ class MarkController extends Controller
     {
         try {
             // Actualizar marca
-            $result = $mark->update([
-                "name" => $request->name
-            ]);
+            $result = 0;
+            if($request->name !== null){
+                $result = $mark->update([
+                    "name" => $request->name
+                ]);
+            }
+           
             // Respuesta
             return response()->json([
-                "message" => $result ? "Marca Editada correctamente" : "No se edito la marca!",
-                "data"=> $result, 
-                "estatus" => Response::HTTP_OK
-            ], Response::HTTP_OK);
+                "message" => $result ? "Marca Editada correctamente" : "No se edito la marca, El campo nombre es obligatorio!",
+                "data"=> $mark, 
+                "estatus" => $result ? Response::HTTP_OK : Response::HTTP_NOT_FOUND
+            ], $result ? Response::HTTP_OK : Response::HTTP_NOT_FOUND);
     
         } catch (\Throwable $th) {
             //throw $th;
@@ -136,7 +144,7 @@ class MarkController extends Controller
             // Respuesta
             return response()->json([
                 "message" => $result ? "Marca Eliminada correctamente" : "No se Eliminó la marca!",
-                "data"=> $result, 
+                "data"=> $mark, 
                 "estatus" => Response::HTTP_OK
             ], Response::HTTP_OK);
     
